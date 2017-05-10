@@ -1,0 +1,17 @@
+{
+	"name": "mmon",
+	"version": "0.1.0",
+	"publisher": "mojule",
+	"engines": { "vscode": "*" },
+	"contributes": {
+		"languages": [{
+			"id": "mmon",
+			"extensions": [ ".mmon" ]
+		}],
+		"grammars": [{
+			"language": "mmon",
+			"scopeName": "source.mmon",
+			"path": "./syntaxes/mmon.json"
+		}]
+	}
+}
