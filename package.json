@@ -1,17 +1,40 @@
 {
-	"name": "mmon",
-	"version": "0.1.0",
-	"publisher": "mojule",
-	"engines": { "vscode": "*" },
-	"contributes": {
-		"languages": [{
-			"id": "mmon",
-			"extensions": [ ".mmon" ]
-		}],
-		"grammars": [{
-			"language": "mmon",
-			"scopeName": "source.mmon",
-			"path": "./syntaxes/mmon.json"
-		}]
-	}
+  "name": "mmon",
+  "displayName": "VSCode syntax highlighting for MMON",
+  "description": "Syntax highlighting for Mojule Model Object Notation (MMON) files.  Assists in creating mmon files.",
+  "version": "0.1.3",
+  "icon" : "images/mojule-logo.svg",
+  "publisher": "mojule",
+  "engines": {
+    "vscode": "*"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mojule/vscode-mmon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mojule/vscode-mmon/issues"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "mmon",
+        "extensions": [
+          ".mmon"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mmon",
+        "scopeName": "source.mmon",
+        "path": "./syntaxes/mmon.json"
+      }
+    ]
+  },
+  "galleryBanner": {
+    "color": "#5c2d91",
+    "theme": "dark"
+  }
 }
