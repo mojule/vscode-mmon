@@ -2,7 +2,7 @@
   "name": "mmon",
   "displayName": "VSCode syntax highlighting for MMON",
   "description": "Syntax highlighting for Mojule Model Object Notation (MMON) files.  Assists in creating mmon files.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "mojule",
   "icon" : "images/mojule-logo.svg",
   "galleryBanner": {
