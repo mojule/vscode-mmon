@@ -22,10 +22,19 @@ You can install the .vsix file into [VSCode](https://code.visualstudio.com/) fro
 
 * `code --install-extension mmon-x.x.x.vsix`
 
-## Useful links
+## Developer Information
+
+### Useful links
 
 [How to write a syntax highlighting package for atom](https://www.sitepoint.com/how-to-write-a-syntax-highlighting-package-for-atom/)
 
 [language grammars->naming conventions](http://manual.macromates.com/en/language_grammars#naming_conventions)
 
 [Writing a TextMate Grammar: Some Lessons Learned](https://www.apeth.com/nonblog/stories/textmatebundle.html)
+
+### Tips
+
+To see the themeing data for editor elements:
+
+* Ctrl-Shift-P or F1 to show the Command Palette
+* Select : `Developer: Inspect TM Scopes`

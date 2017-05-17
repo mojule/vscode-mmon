@@ -61,14 +61,28 @@
         }
       ]
     },
+    "tag" : {
+      "name": "entity.other.attribute-name",
+      "begin": "^\\s*?(\\S.*?)(>)",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.other.attribute-name"
+        },
+        "2": {
+          "name": "constant.language.mmon"
+        }
+      },
+      "end": "\\s"
+
+    },
     "property": {
       "name": "support.type.property-name.mmon",
-      "begin": "^\\s*?(\\S.*?)(>|:|\\[]|{}|\\$)",
+      "begin": "^\\s*?(\\S.*?)(:|\\[]|{}|\\$)",
       "beginCaptures": {
-        "0": {
+        "1": {
           "name": "support.type.property-name.mmon"
         },
-        "1": {
+        "2": {
           "name": "constant.language.mmon"
         }
       },
@@ -76,7 +90,7 @@
     },
     "assignment": {
       "name": "constant.language.mmon",
-      "match": "(>|:|\\[]|{}|\\$)"
+      "match": "(:|\\[]|{}|\\$)"
     },
     "constant": {
       "name": "keyword.control",
@@ -97,6 +111,9 @@
         },
         {
           "include": "#string"
+        },
+        {
+          "include": "#tag"
         },
         {
           "include": "#property"
