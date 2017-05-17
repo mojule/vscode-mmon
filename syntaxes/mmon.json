@@ -11,6 +11,14 @@
     }
   ],
   "repository": {
+    "constant": {
+      "name": "constant.language.mmon",
+      "match": "\\b(?:true|false|null)\\b"
+    },
+    "number": {
+      "name": "constant.numeric.mmon",
+      "match": "\\b-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)?"
+    },
     "comments": {
       "patterns": [
         {
@@ -29,18 +37,18 @@
         }
       ]
     },
-    "string": {
+    "quotedstring": {
       "name": "string.quoted.double.mmon",
       "begin": "\"",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.definition.string.begin.mmon"
+          "name": "keyword.control.mmon"
         }
       },
       "end": "\"",
       "endCaptures": {
         "0": {
-          "name": "punctuation.definition.string.end.mmon"
+          "name": "keyword.control.mmon"
         }
       },
       "patterns": [
@@ -75,9 +83,57 @@
       "end": "\\s"
 
     },
+    "anonarray" : {
+      "name": "keyword.control.mmon",
+      "begin": "(\\[\\])\\s",
+      "end" : "(?=^.*?(?:>|:|\\[]|{}|\\$|//|/\\*))",
+      "patterns" : [
+        {
+          "include": "#quotedstring"
+        },
+        {
+          "include": "#constant"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "name" : "entity.name.function",
+          "match" : "\\b\\w+?\\b"
+        }
+      ]
+    },
+    "namearray" : {
+      "name": "keyword.control.mmon",
+      "begin": "^\\s*?(\\S.*?)(\\[])",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.other.attribute-name.mmon"
+        },
+        "2": {
+          "name": "keyword.control.mmon"
+        }
+      },
+      "end" : "(?=^.*?(?:>|:|\\[]|{}|\\$|//|/\\*))",
+      "patterns" : [
+        {
+          "include": "#quotedstring"
+        },
+        {
+          "include": "#constant"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "name" : "entity.name.function",
+          "match" : "\\b\\w+?\\b"
+        }
+      ]
+    },
     "property": {
       "name": "entity.other.attribute-name.mmon",
-      "begin": "^\\s*?(\\S.*?)(:|\\[]|{}|\\$)",
+      "begin": "^\\s*?(\\S.*?)(:|{}|\\$)",
       "beginCaptures": {
         "1": {
           "name": "entity.other.attribute-name.mmon"
@@ -90,15 +146,7 @@
     },
     "assignment": {
       "name": "keyword.control.mmon",
-      "match": "(:|\\[]|{}|\\$)"
-    },
-    "constant": {
-      "name": "constant.language.mmon",
-      "match": "\\b(?:true|false|null)\\b"
-    },
-    "number": {
-      "name": "constant.numeric.mmon",
-      "match": "\\b-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)?"
+      "match": "(:|{}|\\$)"
     },
     "others": {
       "name": "string.quoted.double.mmon",
@@ -107,10 +155,16 @@
     "value": {
       "patterns": [
         {
+          "include": "#constant"
+        },
+        {
+          "include": "#number"
+        },
+        {
           "include": "#comments"
         },
         {
-          "include": "#string"
+          "include": "#quotedstring"
         },
         {
           "include": "#tag"
@@ -119,13 +173,13 @@
           "include": "#property"
         },
         {
+          "include": "#anonarray"
+        },
+        {
+          "include": "#namearray"
+        },
+        {
           "include": "#assignment"
-        },
-        {
-          "include": "#constant"
-        },
-        {
-          "include": "#number"
         },
         {
           "include": "#others"
