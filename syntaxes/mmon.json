@@ -62,42 +62,42 @@
       ]
     },
     "tag" : {
-      "name": "entity.other.attribute-name",
+      "name": "entity.name.tag.mmon",
       "begin": "^\\s*?(\\S.*?)(>)",
       "beginCaptures": {
         "1": {
-          "name": "entity.other.attribute-name"
+          "name": "entity.name.tag.mmon"
         },
         "2": {
-          "name": "constant.language.mmon"
+          "name": "keyword.control.mmon"
         }
       },
       "end": "\\s"
 
     },
     "property": {
-      "name": "support.type.property-name.mmon",
+      "name": "entity.other.attribute-name.mmon",
       "begin": "^\\s*?(\\S.*?)(:|\\[]|{}|\\$)",
       "beginCaptures": {
         "1": {
-          "name": "support.type.property-name.mmon"
+          "name": "entity.other.attribute-name.mmon"
         },
         "2": {
-          "name": "constant.language.mmon"
+          "name": "keyword.control.mmon"
         }
       },
       "end": "\\s"
     },
     "assignment": {
-      "name": "constant.language.mmon",
+      "name": "keyword.control.mmon",
       "match": "(:|\\[]|{}|\\$)"
     },
     "constant": {
-      "name": "keyword.control",
+      "name": "constant.language.mmon",
       "match": "\\b(?:true|false|null)\\b"
     },
     "number": {
-      "name": "constant.numeric.json",
+      "name": "constant.numeric.mmon",
       "match": "\\b-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)?"
     },
     "others": {
