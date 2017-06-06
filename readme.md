@@ -38,3 +38,8 @@ To see the themeing data for editor elements:
 
 * Ctrl-Shift-P or F1 to show the Command Palette
 * Select : `Developer: Inspect TM Scopes`
+
+
+## License
+
+MIT
